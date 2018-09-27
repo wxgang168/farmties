@@ -1,10 +1,6 @@
 /node_modules
 /public/hot
 /public/storage
-/public/images/.DS_Store
-/public/css/.DS_Store
-/public/profile/.DS_Store
-/public/.DS_Store
 /storage/*.key
 /vendor
 /.idea
@@ -18,3 +14,4 @@ yarn-error.log
 .env
 .DS_Store
 
+.DS_Store
