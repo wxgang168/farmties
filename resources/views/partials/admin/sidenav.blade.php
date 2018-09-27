@@ -25,6 +25,18 @@
                     <p>Orders</p>
                 </a>
             </li>
+            <li>
+                <a href="{{ route('services.index') }}">
+                    <i class="pe-7s-settings"></i>
+                    <p>Services</p>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('sliders.index') }}">
+                    <i class="pe-7s-settings"></i>
+                    <p>Sliders</p>
+                </a>
+            </li>
         </ul>
 	</div>
 </div>

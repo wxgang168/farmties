@@ -1,8 +1,8 @@
 <?php
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('pages.index');
+})->name('welcome');
 
 Auth::routes();
 
@@ -11,6 +11,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::prefix('admin')->group(function() {
 
 	Route::resource('commodities', 'CommodityController');
+	Route::resource('services', 'ServiceController');
+	Route::resource('sliders', 'SliderController');
 	Route::get('/orders', 'AdminOrderController@index')->name('admin.orders.index');
 	Route::get('/orders/{order}/edit', 'AdminOrderController@edit')->name('admin.orders.edit');
 	Route::patch('/orders/{order}/update', 'AdminOrderController@update')->name('admin.orders.update');
