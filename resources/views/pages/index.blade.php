@@ -86,10 +86,10 @@
 	<div class="col-md-3 dark col-padding ohidden" style="background-image: url('{{ asset('images/services/'. $service->path) }}'); background-color: rgba(0,0,0,0.7); background-size: cover; background-repeat: no-repeat; background-blend-mode: multiply;">
 		<div>
 			<h3 class="uppercase" style="font-weight: 600;">{{ $service->name }}</h3>
-			<p style="line-height: 1.8;">{{ $service->description }}</p>
-			{{--  
+			<p style="line-height: 1.8;">{{ $service->description }}</p>  
 			<a href="#" class="button button-border button-light button-rounded uppercase nomargin">Read More</a>
 
+			{{--  
 			<i class="icon-thumbs-up bgicon"></i>
 			--}}
 		</div>

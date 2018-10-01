@@ -1,4 +1,4 @@
-<div id="top-bar" class="dark">
+<div id="top-bar" class="dark" style="overflow: hidden;">
 
 	<div class="container clearfix">
 
@@ -27,3 +27,4 @@
 	</div>
 
 </div><!-- #top-bar end -->
+<div class="clear"></div>
