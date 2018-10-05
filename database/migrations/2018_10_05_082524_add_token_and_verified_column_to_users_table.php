@@ -14,7 +14,7 @@ class AddTokenAndVerifiedColumnToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('token')->unique();
+            $table->string('token');
             $table->boolean('verified')->default(false);
         });
     }
