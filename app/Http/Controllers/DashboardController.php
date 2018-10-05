@@ -65,7 +65,7 @@ class DashboardController extends Controller
 
     public function profile()
     {
-        if (Auth::user()->profile->path !== null) {
+        if (Auth::user()->profile) {
             return view('pages.dashboard.patch');
         } else {
             return view('pages.dashboard.profile');
