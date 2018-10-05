@@ -305,25 +305,25 @@ footer.footer-dark {
         .main-menu.menu-light ul.menu-popout .active .hover > a, .main-menu.menu-light ul.menu-popout .active :hover > a {
           background-color: transparent; }
   .main-menu.menu-dark {
-    color: #94a9da;
-    background: #1a3c8b; }
+    color: rgba(236, 240, 241,1.0);
+    background: #27ae60; }
     .main-menu.menu-dark .main-menu-header {
       padding: 20px; }
       .main-menu.menu-dark .main-menu-header .menu-search {
-        background: #122960;
+        background: #16a085;
         padding: 0.5rem 1rem;
         color: #6e8bcd; }
         .main-menu.menu-dark .main-menu-header .menu-search:focus {
-          border-color: #0e204b; }
+          border-color: #16a085; }
     .main-menu.menu-dark .navigation {
-      background: #1a3c8b; }
+      background: #27ae60; }
       .main-menu.menu-dark .navigation .navigation-header {
-        color: #94a9da;
+        color: #ecf0f1;
         padding: 30px 20px 8px 20px; }
         .main-menu.menu-dark .navigation .navigation-header span {
           font-weight: 500; }
       .main-menu.menu-dark .navigation li a {
-        color: #94a9da; }
+        color: #ecf0f1; }
         .main-menu.menu-dark .navigation li a span {
           display: inline-block; }
         .main-menu.menu-dark .navigation li a span.menu-sub-title {
@@ -341,9 +341,9 @@ footer.footer-dark {
             position: relative;
             top: 3px; }
         .main-menu.menu-dark .navigation > li.open > a {
-          color: #6e8bcd;
-          background: #17357a;
-          border-right: 4px solid #1B65D3; }
+          color: #ecf0f1;
+          background: #16a085;
+          border-right: 4px solid #f39c12; }
         .main-menu.menu-dark .navigation > li:not(.open) > ul {
           display: none; }
         .main-menu.menu-dark .navigation > li.hover > a, .main-menu.menu-dark .navigation > li:hover > a, .main-menu.menu-dark .navigation > li.active > a {
@@ -354,25 +354,25 @@ footer.footer-dark {
           color: #FFFFFF;
           font-weight: 700; }
         .main-menu.menu-dark .navigation > li .active {
-          background: #153171; }
+          background: #16a085; }
           .main-menu.menu-dark .navigation > li .active > a {
             color: #FFFFFF;
             font-weight: 700; }
           .main-menu.menu-dark .navigation > li .active .hover > a {
-            background: #17357a; }
+            background: #16a085; }
         .main-menu.menu-dark .navigation > li ul {
           padding: 0;
           margin: 0;
           font-size: 1rem; }
           .main-menu.menu-dark .navigation > li ul li {
-            color: #94a9da;
+            color: #ecf0f1;
             background: transparent; }
             .main-menu.menu-dark .navigation > li ul li > a {
               padding: 8px 18px 8px 54px; }
           .main-menu.menu-dark .navigation > li ul .has-sub:not(.open) > ul {
             display: none; }
           .main-menu.menu-dark .navigation > li ul .open > a {
-            color: #94a9da; }
+            color: #ecf0f1; }
           .main-menu.menu-dark .navigation > li ul .open > ul {
             display: block; }
             .main-menu.menu-dark .navigation > li ul .open > ul li > a {
@@ -391,9 +391,9 @@ footer.footer-dark {
             .main-menu.menu-dark .navigation > li ul .active .hover > a {
               background-color: transparent; }
         .main-menu.menu-dark .navigation > li > ul {
-          background: #1a3c8b; }
+          background: #16a085; }
     .main-menu.menu-dark ul.menu-popout {
-      background: #1a3c8b; }
+      background: #16a085; }
       .main-menu.menu-dark ul.menu-popout li a {
         color: #94a9da; }
         .main-menu.menu-dark ul.menu-popout li a span.menu-sub-title {
@@ -407,10 +407,10 @@ footer.footer-dark {
       .main-menu.menu-dark ul.menu-popout .open > ul {
         display: block; }
         .main-menu.menu-dark ul.menu-popout .open > ul .open {
-          background: #132b64; }
+          background: #16a085; }
           .main-menu.menu-dark ul.menu-popout .open > ul .open > ul {
             display: block;
-            background: #132b64; }
+            background: #16a085; }
       .main-menu.menu-dark ul.menu-popout .hover > a, .main-menu.menu-dark ul.menu-popout:hover > a {
         color: #a3b5df; }
       .main-menu.menu-dark ul.menu-popout .active {
@@ -420,11 +420,11 @@ footer.footer-dark {
         .main-menu.menu-dark ul.menu-popout .active .hover > a, .main-menu.menu-dark ul.menu-popout .active :hover > a {
           background-color: transparent; }
   .main-menu.menu-bg-default {
-    background: -webkit-gradient(linear, left top, left bottom, from(#193e8e), to(#130e3b)) !important;
-    background: -webkit-linear-gradient(#193e8e, #130e3b) !important;
-    background: -moz-linear-gradient(#193e8e, #130e3b) !important;
-    background: -o-linear-gradient(#193e8e, #130e3b) !important;
-    background: linear-gradient(#193e8e, #130e3b) !important;
+    background: -webkit-gradient(linear, left top, left bottom, from(#2ecc71), to(#16a085)) !important;
+    background: -webkit-linear-gradient(#2ecc71, #16a085) !important;
+    background: -moz-linear-gradient(#2ecc71, #16a085) !important;
+    background: -o-linear-gradient(#2ecc71, #16a085) !important;
+    background: linear-gradient(#2ecc71, #16a085) !important;
     -webkit-box-shadow: 0px 0px 8px rgba(62, 57, 107, 0.7) !important;
     box-shadow: 0px 0px 8px rgba(62, 57, 107, 0.7) !important; }
     .main-menu.menu-bg-default .navigation {

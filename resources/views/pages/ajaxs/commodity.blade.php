@@ -28,7 +28,7 @@
 					</tr>
 					<tr>
 						<td>Storage Fee / Monthly Charge</td>
-						<td><span id="storage" data-value="500">{{ nairafy(500) }} / Month</span></td>
+						<td><span id="storageP" data-value="500">-</span></td>
 					</tr>
 					<tr>
 						<td>Handling Fee/MT</td>

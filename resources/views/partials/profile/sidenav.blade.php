@@ -5,28 +5,13 @@
           </li>
           <li class=" nav-item"><a href="{{ route('display.stocks') }}"><i class="icon-layers"></i><span class="menu-title" data-i18n="">My Stock</span></a>
           </li>
-          <li class=" nav-item"><a href="wallet.html"><i class="icon-wallet"></i><span class="menu-title" data-i18n="">Wallet</span></a>
-          </li>
           <li class=" nav-item"><a href="{{ route('orders.index') }}"><i class="icon-shuffle"></i><span class="menu-title" data-i18n="">Transactions</span></a>
           </li>
+          {{--  
           <li class=" nav-item"><a href="faq.html"><i class="icon-support"></i><span class="menu-title" data-i18n="">FAQ</span></a>
           </li>
-          <li class=" nav-item"><a href="#"><i class="icon-user-following"></i><span class="menu-title" data-i18n="">Account</span></a>
-            <ul class="menu-content">
-              <li><a class="menu-item" href="account-profile.html">Profile</a>
-              </li>
-              <li><a class="menu-item" href="account-login-history.html">Login History</a>
-              </li>
-              <li class="navigation-divider"></li>
-              <li><a class="menu-item" href="#">Misc</a>
-                <ul class="menu-content">
-                  <li><a class="menu-item" href="account-login.html">Login</a>
-                  </li>
-                  <li><a class="menu-item" href="account-register.html">Register</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
+          --}}
+          <li class=" nav-item"><a href="{{ route('user.profile') }}"><i class="icon-user-following"></i><span class="menu-title" data-i18n="">Profile</span></a>
           </li>
         </ul>
       </div>

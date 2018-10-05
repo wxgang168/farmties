@@ -54,13 +54,9 @@ class CartController extends Controller
             $commodity = Commodity::find($id);
             $handling = 1000 * $qty; 
             $transaction = 1000 * $qty;
+            $storage = 500 * $qty;
 
-            //$holding = $commodity->prices->last()->price * $qty;
-
-            //$price = $holding + $handling + $transaction + 500;
-            //$figure = (0.005 * $price) + $price;
-
-            Cart::add($commodity->id, $commodity->name, $qty, $commodity->prices->last()->price, ['image' => $commodity->path, 'handling' => $handling, 'transaction' => $transaction, 'storage' => 500])->associate('Commodity');
+            Cart::add($commodity->id, $commodity->name, $qty, $commodity->prices->last()->price, ['image' => $commodity->path, 'handling' => $handling, 'transaction' => $transaction, 'storage' => $storage])->associate('Commodity');
 
             return response()->json(['data' => 'Cart updated successfully', 'status' => 'success']);
 
@@ -83,14 +79,14 @@ class CartController extends Controller
                 $commodity = Commodity::find($id);
                 $qty = $request->qty;
                 $handling = $qty * 1000;
-                $storage = 500;
+                $storage = 500 * $qty;
                 $transaction = $qty * 1000;
                 $price = $commodity->prices->last()->price * $qty;
                 $sub = $handling + $price + $transaction + $storage;
                 $charges = $sub * 0.005;
                 $total = $sub + $charges;
 
-                return response()->json(['data' => [$handling, $total, $transaction, $charges, $price]]);
+                return response()->json(['data' => [$handling, $total, $transaction, $charges, $price, $storage]]);
             }
         }
     }
@@ -114,23 +110,7 @@ class CartController extends Controller
      */
     public function edit($id)
     {
-        if ($request->ajax()) {
-
-            //$id = $request->com_id;
-
-            //$commodity = Commodity::find($id);
-            //Cart::add($commodity->id, $commodity->name, $request->qty, $request->price, ['image' => $commodity->path])->associate('Commodity');
-
-            // if ($request->commodity_id !== null) {
-            //     $id = $request->commodity_id;
-            //     $commodity = Commodity::find($id);
-            //     $data = view('pages.ajaxs.commodity', compact('commodity'))->render();
-                
-            // }
-
-            // return response()->json($data);
-
-        }
+        //
     }
 
     /**

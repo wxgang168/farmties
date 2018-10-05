@@ -87,15 +87,16 @@ class StockController extends Controller
         $now = Carbon::now();
         $date = Carbon::parse($stock->created_at);
         $months = $date->diffInMonths($now);
+        $store = 500 * $qty;
+
         if ($months < 1) {
-            $storage = 500;
+            $storage = $store;
         } else {
-            $storage = 500 * $months;
+            $storage = $store * $months;
         }
+
         $charges = ($price + $months + $storage) * 0.025;
         $total = $price - $transaction - $storage - $charges;
-
-        //$order = new Order;
 
         if ($qty <= $stock->qty) {
             $user = Auth::user();

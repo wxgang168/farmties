@@ -21,10 +21,6 @@
 </div>
 @stop
 
-@section('extra-plus')
-	<div class="content-detached content-left">
-@stop
-
 @section('content')
 {{--  
 <section class="card pull-up">
@@ -53,130 +49,55 @@
 <h3 class="mt-4">Buy tokens</h3>
 <p>To buy tokens, transfer ETH or BTC to your personal deposit address:</p>
 --}}
-
+<div class="row">
 @foreach($stocks as $stock)
 @if($stock->order->paid === 1)
 <!-- Bitcoin -->
-<section class="card pull-up">
-    <div class="card-content">
-        <div class="card-body">
-            <div class="col-12">
-                <div class="row">
-                    <div class="col-md-3 col-xl-2 col-12 d-none d-md-block">
-                        <div class="crypto-circle rounded-circle">
-                            <img src="{{ asset('images/commodities/'.$stock->commodity->path) }}" alt="" class="img-fluid">
-                        </div>
-                    </div>
-                    <div class="col-md-5 col-xl-7 col-12">
-                        <p><strong>{{ $stock->commodity->name }}</strong></p>
-                        <h5>Current Price: {{ nairafy($stock->commodity->prices->last()->price) }}</h5>
-                        <button type="button" class="btn btn-warning round mr-1 mb-0 view_sale" id="{{ $stock->id }}">
-                            Sell
-                        </button>
-                    </div>
-                    <div class="col-md-4 col-xl-3 col-12 d-none d-md-block">
-                        <i class="icon-layers"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+	<div class="col-md-6">
+	    <div class="card">
+	        <div class="card-header">
+	            <h6 class="card-title text-center">{{ $stock->commodity->name }}</h6>            
+	        </div>
+	        <div class="card-content collapse show">
+	            <div class="card-body">
+
+	                <div class="text-center row clearfix mb-2">
+	                  <div class="col-12">
+	                    <div class="bg-circ-img" style="border-radius: 50%; overflow: hidden; height: 80%; width: 50%; margin: auto;">
+	                    	<img src="{{ asset('images/commodities/'.$stock->commodity->path) }}" alt="" class="img-fluid">
+	                    </div>
+	                  </div>
+	                </div>
+	                <h3 class="text-center">Current Price: {{ nairafy($stock->commodity->prices->last()->price) }} / MT</h3>
+	            </div>
+	            <div class="table-responsive">
+	                  <table class="table table-de mb-0">                    
+	                    <tbody>
+	                      <tr>
+	                        <td>Purchase Price</td>
+	                        <td>{{ nairafy($stock->total) }}</td>
+	                      </tr>
+	                      <tr>
+	                        <td>Available Stock</td>
+	                        <td>{{ $stock->qty }}</td>                        
+	                      </tr>
+	                      <tr>
+	                        <td colspan="2" style="text-align: center;">
+	                            <button type="button" class="btn-gradient-secondary view_sale" id="{{ $stock->id }}">
+	                            	Sell Commodity
+	                        	</button>
+	                        </td>                        
+	                      </tr>                      
+	                    </tbody>
+	                  </table>
+	            </div>
+	        </div>
+	    </div>
+	</div>
 <!--/ Bitcoin -->
 @endif
 @endforeach
-@stop
-@section('extras')
-	</div>
-	<div class="sidebar-detached sidebar-right" ="">
-		<div class="sidebar">
-			<div class="sidebar-content">
-				<!-- token sale progress -->
-				<div class="card">
-					<div class="card-header">
-						<h6 class="card-title text-center">Token sale progress</h6>            
-					</div>
-					<div class="card-content collapse show">
-						<div class="card-body">
-						    <div class="font-small-3 clearfix">
-						        <span class="float-left">$0</span>
-						        <span class="float-right">$5M</span>
-						    </div>
-						    <div class="progress progress-sm my-1 box-shadow-2">
-						        <div class="progress-bar bg-warning" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-						    </div>
-						    <div class="font-small-3 clearfix">
-						        <span class="float-left">Distributed <br/> <strong>6,235,125 CIC</strong></span>
-						        <span class="float-right text-right">Contributed  <br/> <strong>5478 ETH | 80 BTC</strong></span>
-						    </div>
-						</div>
-					</div>
-				</div>
-				<!--/ token sale progress -->
-
-				<!-- token sale progress -->
-				<div class="card">
-				<div class="card-header">
-				<h6 class="card-title text-center">Calculator</h6>            
-				</div>
-				<div class="card-content collapse show">
-				<div class="card-body">
-				    <form class="form form-horizontal">
-				        <div class="form-body">    
-				            <div class="form-group row">
-				                <fieldset class="col-12">
-				                  <div class="input-group">
-				                    <input type="text" class="form-control" placeholder="ETH" aria-describedby="basic-addon4">
-				                    <div class="input-group-append">
-				                      <span class="input-group-text" id="basic-addon4"><i class="cc ETH-alt"></i></span>
-				                    </div>
-				                  </div>
-				                </fieldset>
-				            </div>
-				            <div class="form-group row">
-				                <fieldset class="col-12">
-				                  <div class="input-group">
-				                    <input type="text" class="form-control" placeholder="BTC" aria-describedby="basic-addon4">
-				                    <div class="input-group-append">
-				                      <span class="input-group-text" id="basic-addon4"><i class="cc BTC-alt"></i></span>
-				                    </div>
-				                  </div>
-				                </fieldset>
-				            </div>
-				            <div class="form-group row">
-				                <fieldset class="col-12">
-				                  <div class="input-group">
-				                    <input type="text" class="form-control" placeholder="USD" aria-describedby="basic-addon4">
-				                    <div class="input-group-append">
-				                      <span class="input-group-text" id="basic-addon4"><i class="la la-dollar"></i></span>
-				                    </div>
-				                  </div>
-				                </fieldset>
-				            </div>
-				            <div class="form-group row">
-				                <fieldset class="col-12">
-				                  <p class="mb-0">=</p>
-				                </fieldset>
-				            </div>
-				            <div class="form-group row">
-				                <fieldset class="col-12">
-				                  <div class="input-group">
-				                    <input type="text" class="form-control" placeholder="CIC" aria-describedby="basic-addon4">
-				                    <div class="input-group-append">
-				                      <span class="input-group-text" id="basic-addon4"><i class="icon-layers"></i></span>
-				                    </div>
-				                  </div>
-				                </fieldset>
-				            </div>
-				        </div>
-				    </form>
-				</div>
-				</div>
-				</div>
-				<!--/ token sale progress -->
-			</div>
-	    </div>
-	</div>
+</div>
 @stop
 
 @section('modals')

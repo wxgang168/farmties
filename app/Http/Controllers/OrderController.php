@@ -63,21 +63,13 @@ class OrderController extends Controller
             $cartItems = Cart::content();
 
             foreach($cartItems as $cartItem) {
-                $price =  ($cartItem->qty*$cartItem->price) + ($cartItem->qty*2000) + 500;
+                $price =  ($cartItem->qty*$cartItem->price) + ($cartItem->qty*2000) + (500*$cartItem->qty);
                 $total = ($price*0.005) + $price;
 
                 $order->commodities()->attach($cartItem->id, [
                     'qty' => $cartItem->qty,
                     'total' => $total,
                 ]);
-
-                // $order->stocks()->create([
-                //     'user_id' => Auth::user()->id,
-                //     'commodity_id' => $cartItem->id,
-                //     'qty' => $cartItem->qty,
-                //     'price' => $cartItem->price,
-                //     'total' => $total,
-                // ]);
             }
 
             Cart::destroy();

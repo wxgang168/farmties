@@ -127,6 +127,7 @@ function updateSub() {
 			$('#trans').html(formatter.format(result.data[2]));
 			$('#farmCharges').html(formatter.format(result.data[3]));
 			$('#price').html(formatter.format(result.data[4]));
+			$('#storageP').html(formatter.format(result.data[5]));
 		},
 		error : function(data) {
 			console.log(data);

@@ -34,10 +34,13 @@ Route::prefix('dashboard')->group(function() {
 	Route::post('/cart/remove/commodities/{commodity}', 'CartController@removeRow');
 	Route::get('/stocks', 'DashboardController@stocks')->name('display.stocks');
 	Route::get('/', 'DashboardController@index')->name('user.dashboard');
+	Route::get('/profile', 'DashboardController@profile')->name('user.profile');
 	Route::post('/update/values', 'CartController@updateValues')->name('update.values');
 	Route::post('/calculate/stock/sale', 'DashboardController@sale')->name('calculate.sale');
 	Route::post('/sales/figures/', 'DashboardController@calculateSale')->name('sale.figure');
 	Route::post('/view/commodity', 'DashboardController@display')->name('display.commodity');
+	Route::post('/profile/update', 'DashboardController@update')->name('user.profile.update');
+	Route::patch('/profile/change/{profile}', 'DashboardController@patchProfile')->name('user.profile.change');
 	Route::patch('/stocks/{stock}/sale', 'StockController@update')->name('make.sale');
 
 });

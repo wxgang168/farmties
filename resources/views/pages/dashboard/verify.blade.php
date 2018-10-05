@@ -17,7 +17,7 @@
 @stop
 @section('content')
 <div class="row">
-    <div class="col-12 col-md-8">
+    <div class="col-12 col-md-12">
         <!-- User Profile -->
         <section class="card">
             <div class="card-content">
@@ -69,52 +69,6 @@
                 </div>
             </div>
         </section>
-    </div>
-
-
-
-    <div class="col-12 col-md-4">
-        <div class="card">
-            <div class="card-header">
-                <h6 class="card-title text-center">ICO Tokens</h6>
-            </div>
-            <div class="card-content collapse show">
-                <div class="card-body">
-                    <div class="text-center row clearfix mb-2">
-                        <div class="col-12">
-                            <i class="icon-layers font-large-3 bg-warning bg-glow white rounded-circle p-3 d-inline-block"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-center">3,458.88 CIC</h3>
-                </div>
-                <div class="table-responsive">
-                    <table class="table table-de mb-0">
-                        <tbody>
-                            <tr>
-                                <td>CIC Token</td>
-                                <td><i class="icon-layers"></i> 3,258 CIC</td>
-                            </tr>
-                            <tr>
-                                <td>CIC Referral</td>
-                                <td><i class="icon-layers"></i> 200.88 CIC</td>
-                            </tr>
-                            <tr>
-                                <td>CIC Price</td>
-                                <td><i class="cc BTC-alt"></i> 0.0001 BTC</td>
-                            </tr>
-                            <tr>
-                                <td>Raised BTC</td>
-                                <td><i class="cc BTC-alt"></i> 2154 BTC</td>
-                            </tr>
-                            <tr>
-                                <td>Raised USD</td>
-                                <td><i class="la la-dollar"></i> 4.52 M</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 @stop

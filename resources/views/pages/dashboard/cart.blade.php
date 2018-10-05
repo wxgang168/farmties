@@ -14,21 +14,27 @@
 	</div>
 	</div>
 	<div class="content-header-right col-md-4 col-12 d-none d-md-inline-block">
-	<div class="btn-group float-md-right">
-		<form action="{{ route('orders.store') }}" method="POST">
-			@csrf
-			
-			<input type="hidden" name="transID" value="{{ getToken(8) }}">
-			<button type="submit" class="btn-gradient-secondary btn-sm white">Buy Stocks</button>
-		</form>
-	</div>
+		@if($cartItems->count() > 0)
+		<div class="btn-group float-md-right">
+			<form action="{{ route('orders.store') }}" method="POST">
+				@csrf
+				
+				<input type="hidden" name="transID" value="{{ getToken(8) }}">
+				<button type="submit" class="btn-gradient-secondary btn-sm white">Buy Stocks</button>
+			</form>
+		</div>
+		@else
+		<div class="btn-group float-md-right">
+			<a href="{{ route('user.dashboard') }}" class="btn-gradient-secondary btn-sm white">Trade Commodities</a>
+		</div>
+		@endif
 	</div>
 @stop
 @section('extra-plus')
+@if($cartItems->count() > 0)
 <div class="content-detached content-left">
 @stop
 @section('content')
-
 <div id="wallet">
     <div class="wallet-table-th d-none d-md-block">
         <div class="row">
@@ -125,6 +131,17 @@
 		</div>
 	</div>
 </div>
+@else
+<div class="content-detached content-left">
+	
+	<p class="lead">Your Basket is Empty</p>
+
+</div>
+	
+
+@endif
+
+
 @stop
 @section('scripts')
 <script>

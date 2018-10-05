@@ -15,7 +15,11 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'token', 'verified',
+    ];
+
+    protected $events = [
+        'created' => Events\NewUser::class
     ];
 
     /**
@@ -40,5 +44,10 @@ class User extends Authenticatable
     public function stocks()
     {
         return $this->hasMany(Stock::class);
+    }
+
+    public function profile()
+    {
+        return $this->hasOne(UserProfile::class);
     }
 }

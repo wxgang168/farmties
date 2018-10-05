@@ -12,7 +12,11 @@
 </div>
 </div>
 <div class="content-header-right col-md-4 col-12 d-none d-md-inline-block">
-<div class="btn-group float-md-right"><a class="btn-gradient-secondary btn-sm white" href="{{ route('user.dashboard') }}">Trade Commodities</a></div>
+    <div class="btn-group float-md-right">
+        <a class="btn-gradient-secondary btn-sm white" href="{{ route('user.dashboard') }}">
+            Trade Commodities
+        </a>
+    </div>
 </div>
 @stop
 @section('content')
@@ -54,7 +58,21 @@
                                 <p class="mb-0"><span class="d-inline-block d-md-none text-bold-700">OrderID: </span> {{ $order->transID }} </p>
                             </div>
                             <div class="col-md-3 col-12 py-1">
-                                <p class="mb-0"><span class="d-inline-block d-md-none text-bold-700">Details: </span>  {{ $order->processing === 0 ? 'Verify Payment' : 'Processing' }} @if($order->processing === 0)<a href="{{ route('orders.edit', $order->transID) }}"><i class="la la-send warning float-right"></i></a>@endif</p>
+                                <p class="mb-0">
+                                    <span class="d-inline-block d-md-none text-bold-700">
+                                        Details: 
+                                    </span> 
+                                    @if($order->type !== "sale") 
+                                    {{ $order->processing === 0 ? 'Verify Payment' : 'Processing' }} 
+                                    @if($order->processing === 0)
+                                        <a href="{{ route('orders.edit', $order->transID) }}">
+                                            <i class="la la-send warning float-right"></i>
+                                        </a>
+                                    @endif
+                                    @else
+                                        Processing
+                                    @endif
+                                </p>
                             </div>
                         </div>
                     </div>
