@@ -18,6 +18,7 @@ class CreateServicesTable extends Migration
             $table->string('name');
             $table->string('slug')->unique();
             $table->text('description');
+            $table->text('body')->nullable();
             $table->string('path');
             $table->boolean('archived')->default(false);
             $table->timestamps();

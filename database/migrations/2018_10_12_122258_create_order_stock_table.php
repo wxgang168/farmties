@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSaleOrderTable extends Migration
+class CreateOrderStockTable extends Migration
 {
     /**
      * Run the migrations.
@@ -35,6 +35,6 @@ class CreateSaleOrderTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('order_sale');
+        Schema::dropIfExists('order_stock');
     }
 }

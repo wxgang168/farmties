@@ -17,13 +17,10 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
-            // $table->string('avatar')->nullable();
-            // $table->string('token')->unique();
-            // $table->string('path')->nullable();
-            // $table->string('mobile')->unique();
+            $table->string('token')->unique();
             $table->string('password');
-            // $table->boolean('blocked')->default(false);
-            // $table->boolean('verified')->default(false);
+            $table->boolean('blocked')->default(false);
+            $table->boolean('verified')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });
