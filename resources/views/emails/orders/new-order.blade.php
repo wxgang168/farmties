@@ -11,7 +11,7 @@ Congratulations on your new order with transaction number {{ $order->transID }}.
 **Account Name:** Dahrah Global Limited
 @endcomponent 
 
-@component('mail::button', ['url' => 'https://farmties.app/dashboard/orders'])
+@component('mail::button', ['url' => 'https://www.farmties.com/dashboard/orders'])
 Verify Payment
 @endcomponent
 
