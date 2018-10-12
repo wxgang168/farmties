@@ -13,6 +13,8 @@ Route::prefix('admin')->group(function() {
 	Route::resource('commodities', 'CommodityController');
 	Route::resource('services', 'ServiceController');
 	Route::resource('sliders', 'SliderController');
+	Route::resource('regions', 'RegionController');
+	Route::resource('abbreviations', 'AbbreviationController');
 	Route::get('/orders', 'AdminOrderController@index')->name('admin.orders.index');
 	Route::get('/orders/{order}/edit', 'AdminOrderController@edit')->name('admin.orders.edit');
 	Route::patch('/orders/{order}/update', 'AdminOrderController@update')->name('admin.orders.update');
@@ -23,6 +25,9 @@ Route::prefix('admin')->group(function() {
 	Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
 
 });
+
+Route::get('/verify/user/{url}', 'HomeController@verify');
+Route::get('/services/{service}', 'ServiceController@show')->name('services.show');
 
 Route::prefix('dashboard')->group(function() {
 

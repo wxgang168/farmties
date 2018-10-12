@@ -28,8 +28,16 @@
 	        		<div class="row">
 	        			<div class="col-md-12">
 	        				<div class="form-group">
-	        					<label for="description">Description</label>
+	        					<label for="description">Short Excerpt</label>
 	        					<textarea name="description" class="form-control" row="10" placeholder="Enter a short description of service"></textarea>
+	        				</div>
+	        			</div>
+	        		</div>
+	        		<div class="row">
+	        			<div class="col-md-12">
+	        				<div class="form-group">
+	        					<label for="body">Service Description</label>
+	        					<textarea name="body" class="form-control editor" placeholder="Enter full description of service"></textarea>
 	        				</div>
 	        			</div>
 	        		</div>

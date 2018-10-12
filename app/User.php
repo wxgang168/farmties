@@ -19,7 +19,7 @@ class User extends Authenticatable
     ];
 
     protected $events = [
-        'created' => Events\NewUser::class
+        'created' => 'Events\NewUser',
     ];
 
     /**

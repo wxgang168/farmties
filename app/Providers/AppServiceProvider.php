@@ -27,6 +27,10 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('pages.index', function($view) {
             $view->with('sliders', \App\Slider::where('archived', 0)->latest()->get());
         });
+
+        view()->composer('partials.public.top-nav', function($view) {
+            $view->with('abbreviations', \App\Abbreviation::where('archived', 0)->latest()->get());
+        });
     }
 
     /**

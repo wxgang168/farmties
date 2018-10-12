@@ -10,4 +10,9 @@ class Commodity extends Model
     {
     	return $this->hasMany(CommodityPrice::class);
     }
+
+    public function abbreviations()
+    {
+    	return $this->hasMany(Abbreviation::class);
+    }
 }

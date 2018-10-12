@@ -1,0 +1,16 @@
+.custom_style {
+	font-size: 18px;
+	line-height: 2;
+}
+.custom_style ul {
+	padding-left: 40px !important;
+}
+
+marquee ul {
+	list-style: none;
+}
+
+marquee ul li {
+	display: inline-block;
+	margin-right: 15px;
+}

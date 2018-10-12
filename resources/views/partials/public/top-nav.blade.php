@@ -19,8 +19,20 @@
 
 			<!-- Top Social
 			============================================= -->
-			<div id="top-social">
-				<p style="text-transform: uppercase;">This is were the scroller would be</p>
+			<div id="top-social scroll-top">
+				<p style="text-transform: uppercase;">
+					<marquee>
+						<ul>
+							@foreach($abbreviations as $abbreviation)
+								<li>
+									{{ 
+										$abbreviation->commodity->name . ' (' . $abbreviation->region->abb . ')' . ' -  MaxP - ' . nairafy($abbreviation->MaxP) . ',  MinP - ' . nairafy($abbreviation->MinP) . ',  AveP - ' . nairafy($abbreviation->AveP) . ',  CHG - ' . $abbreviation->CHG . '%' 
+									}}
+								</li>
+							@endforeach
+						</ul>
+					</marquee>
+				</p>
 			</div><!-- #top-social end -->
 
 		</div>

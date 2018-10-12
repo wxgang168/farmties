@@ -8,18 +8,10 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
+use App\Events\NewUser as NewUserEvent;
+
 class RegisterController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Register Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
-    | provide this functionality without requiring any additional code.
-    |
-    */
 
     use RegistersUsers;
 
@@ -63,12 +55,20 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // Generate token for user for verification.
         $token = time() . getToken(6);
-        return User::create([
+
+        // User is created here.
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'token' => $token,
             'password' => Hash::make($data['password']),
         ]);
+
+        // Event is fired here
+        event(new NewUserEvent($user));
+
+        return $user;
     }
 }

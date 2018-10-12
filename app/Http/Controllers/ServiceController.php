@@ -55,6 +55,7 @@ class ServiceController extends Controller
         $service->name = $request->name;
         $service->slug = slugify($request->name);
         $service->description = $request->description;
+        $service->body = $request->body;
 
         if ($request->hasFile('path')) {
             $file = $request->file('path');
@@ -76,9 +77,10 @@ class ServiceController extends Controller
      * @param  \App\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function show(Service $service)
+    public function show($service)
     {
-        //
+        $service = Service::where('slug', $service)->firstOrFail();
+        return view('pages.services.show', compact('service'));
     }
 
     /**
@@ -89,7 +91,7 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
-        //
+        return view('admin.services.edit', compact('service'));
     }
 
     /**
@@ -101,7 +103,29 @@ class ServiceController extends Controller
      */
     public function update(Request $request, Service $service)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'description' => 'required',
+        ]);
+
+        $service->name = $request->name;
+        $service->slug = slugify($request->name);
+        $service->description = $request->description;
+        $service->body = $request->body;
+
+        if ($request->hasFile('path')) {
+            $file = $request->file('path');
+            $filename = time() . $file->getClientOriginalName();
+            $location = public_path('images/services/' . $filename);
+            Image::make($file)->fit(1920, 1080)->save($location);
+
+            $service->path = $filename;
+        }
+
+        $service->save();
+
+        flash()->success('Congratulations!!', 'Service has been updated successfully');
+        return redirect()->route('services.index');
     }
 
     /**

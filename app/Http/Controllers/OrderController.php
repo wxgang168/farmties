@@ -11,6 +11,8 @@ use Auth;
 use Image;
 use Storage;
 
+use App\Events\OrderEvents as NewOrderPlaced;
+
 class OrderController extends Controller
 {
     /**
@@ -73,9 +75,12 @@ class OrderController extends Controller
             }
 
             Cart::destroy();
-            flash()->success('Almost Done!!', 'Payment has to be made within 3 days in order to complete your order.');
+            flash()->overlay('Almost Done!!', 'Please check your email for the account details to make payment, in order to complete the transaction.');
 
         }
+
+        // Event is fired here
+        event(new NewOrderPlaced($order));
         
         return redirect()->route('user.dashboard');
     }

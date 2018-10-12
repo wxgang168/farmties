@@ -2,11 +2,11 @@
 
 namespace App\Listeners;
 
-use App\Events\NewUser;
+use App\Events\NewUser as NewUserEvent;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Mail;
-use App\Mail\NewUserWelcome;
+use App\Mail\NewUserWelcome as WelcomeMail;
 
 class SendWelcomeEmail
 {
@@ -26,8 +26,9 @@ class SendWelcomeEmail
      * @param  NewUser  $event
      * @return void
      */
-    public function handle(NewUser $event)
+    public function handle(NewUserEvent $event)
     {
-        Mail::to($event->user->email)->send(new NewUserWelcome($event->user));
+        //app('log')->info($event->user);
+        Mail::to($event->user->email)->queue(new WelcomeMail($event->user));
     }
 }

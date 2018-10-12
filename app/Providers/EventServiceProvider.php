@@ -16,6 +16,13 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\NewUser' => [
             'App\Listeners\SendWelcomeEmail',
         ],
+        'App\Events\OrderEvents' => [
+            'App\Listeners\NewOrder',
+            'App\Listeners\MadePayment',
+            'App\Listeners\VerifiedPayment',
+            'App\Listeners\StockSold',
+            'App\Listeners\PaymentDeposited',
+        ],
     ];
 
     /**
@@ -26,7 +33,5 @@ class EventServiceProvider extends ServiceProvider
     public function boot()
     {
         parent::boot();
-
-        //
     }
 }

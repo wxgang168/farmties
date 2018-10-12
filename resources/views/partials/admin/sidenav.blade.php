@@ -37,6 +37,18 @@
                     <p>Sliders</p>
                 </a>
             </li>
+            <li>
+                <a href="{{ route('regions.index') }}">
+                    <i class="pe-7s-paint-bucket"></i>
+                    <p>Regions</p>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('abbreviations.index') }}">
+                    <i class="pe-7s-settings"></i>
+                    <p>Abbreviations</p>
+                </a>
+            </li>
         </ul>
 	</div>
 </div>

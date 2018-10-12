@@ -3,7 +3,7 @@
 
 Thank you for registering with farmties, we are glad you are on board. Enjoy trading with our platform. If you have any questions or queries, please contact us at info@farmties.com.
 
-@component('mail::button', ['url' => '/verify/user/'.$user->token])
+@component('mail::button', ['url' => 'https://farmties.app/verify/user/'.$user->token])
 Verify Account
 @endcomponent
 

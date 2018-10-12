@@ -1,4 +1,5 @@
 @extends('layouts.master')
+{{--  
 @section('header')
 <section id="slider" class="slider-parallax swiper_wrapper clearfix">
 
@@ -25,8 +26,61 @@
 </section>
 
 @stop
+--}}
 @section('innerclass', 'nopadding')
 @section('content')
+<div class="section parallax dark nomargin noborder" style="padding: 150px 0; background-image: url('/images/parallax/paddy.jpg');" data-stellar-background-ratio="0.4">
+	<div class="container center clearfix">
+
+		<div class="emphasis-title">
+			<h2>Commodity Trading</h2>
+			<p class="lead topmargin-sm">Earn returns trading agricultural commodities.</p>
+		</div>
+
+		<a href="{{ route('user.dashboard') }}" class="button button-border button-rounded button-light button-large">Start Trading</a>
+
+	</div>
+</div>
+
+<div id="about" class="section parallax full-screen nomargin noborder" style="background-image: url('/images/parallax/soya.jpg');" data-stellar-background-ratio="0.4">
+	<div class="vertical-middle">
+		<div class="container clearfix">
+
+			<div class="col_three_fifth nobottommargin">
+
+				<div class="emphasis-title">
+					<h2>About Us</h2>
+					<p class="lead topmargin-sm">Inadequate access to market is a major challenge faced by small holder farmers in Nigeria. Farmties bridges the gap between demand and supply in the agricultural value chain by market linkage, community engagement, commodity trading and improved post-harvest technologies.</p>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="col-md-12 nopadding common-height">
+
+	@foreach($services as $service)
+	<div class="col-md-3 dark col-padding ohidden" style="background-image: url('{{ asset('images/services/'. $service->path) }}'); background-color: rgba(0,0,0,0.7); background-size: cover; background-repeat: no-repeat; background-blend-mode: multiply;">
+		<div>
+			<h3 class="uppercase" style="font-weight: 600;">{{ $service->name }}</h3>
+			<p style="line-height: 1.8;">{{ $service->description }}</p>  
+			<a href="{{ route('services.show', $service->slug) }}" class="button button-border button-light button-rounded uppercase nomargin">Read More</a>
+
+			{{--  
+			<i class="icon-thumbs-up bgicon"></i>
+			--}}
+		</div>
+	</div>
+	@endforeach
+
+	<div class="clear"></div>
+
+</div>
+
+<div class="clear"></div>
+
 <div class="section parallax full-screen dark nomargin noborder" style="background-image: url('/images/parallax/barn.jpg');" data-stellar-background-ratio="0.4">
 	<div class="vertical-middle">
 		<div class="container clearfix">
@@ -63,45 +117,6 @@
 	</div>
 </div>
 
-<div id="about" class="section parallax full-screen nomargin noborder" style="background-image: url('/images/parallax/soya.jpg');" data-stellar-background-ratio="0.4">
-	<div class="vertical-middle">
-		<div class="container clearfix">
-
-			<div class="col_three_fifth nobottommargin">
-
-				<div class="emphasis-title">
-					<h2>About Us</h2>
-					<p class="lead topmargin-sm">Inadequate access to market is a major challenge faced by small holder farmers in Nigeria. Farmties bridges the gap between demand and supply in the agricultural value chain by market linkage, community engagement, commodity trading and improved post-harvest technologies.</p>
-				</div>
-
-			</div>
-
-		</div>
-	</div>
-</div>
-
-<div class="col-md-12 nopadding common-height">
-
-	@foreach($services as $service)
-	<div class="col-md-3 dark col-padding ohidden" style="background-image: url('{{ asset('images/services/'. $service->path) }}'); background-color: rgba(0,0,0,0.7); background-size: cover; background-repeat: no-repeat; background-blend-mode: multiply;">
-		<div>
-			<h3 class="uppercase" style="font-weight: 600;">{{ $service->name }}</h3>
-			<p style="line-height: 1.8;">{{ $service->description }}</p>  
-			<a href="#" class="button button-border button-light button-rounded uppercase nomargin">Read More</a>
-
-			{{--  
-			<i class="icon-thumbs-up bgicon"></i>
-			--}}
-		</div>
-	</div>
-	@endforeach
-
-	<div class="clear"></div>
-
-</div>
-
-<div class="clear"></div>
-
 <div class="section nomargin noborder" style="background-image: url('/images/parallax/3.jpg');">
 	<div class="heading-block center nobottomborder nobottommargin">
 		<h2>"Creating markets, impacting lives…"</h2>
@@ -122,19 +137,6 @@
 			</div>
 
 		</div>
-	</div>
-</div>
-
-<div class="section parallax dark nomargin noborder" style="padding: 150px 0; background-image: url('/images/parallax/paddy.jpg');" data-stellar-background-ratio="0.4">
-	<div class="container center clearfix">
-
-		<div class="emphasis-title">
-			<h2>Commodity Trading</h2>
-			<p class="lead topmargin-sm">Earn returns trading agricultural commodities.</p>
-		</div>
-
-		<a href="{{ route('user.dashboard') }}" class="button button-border button-rounded button-light button-large">Start Trading</a>
-
 	</div>
 </div>
 

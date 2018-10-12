@@ -2,68 +2,64 @@
 
 @section('content')
 
-    <form method="POST" class="login" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
-        @csrf
+<div class="section nopadding nomargin" style="width: 100%; height: 100%; position: absolute; left: 0; top: 0; background: #444 !important;"></div>
 
-        <fieldset>
+        <div class="section nobg full-screen nopadding nomargin">
+            <div class="container vertical-middle divcenter clearfix">
 
-            <legend class="legend">{{ __('Farmties Login') }}</legend>
+                <div class="row center">
+                    <a href="{{ route('welcome') }}">
+                        <img src="/profile/app-assets/images/logo/farmties-white-logo.png" width="6%" alt="Canvas Logo">
+                    </a>
+                </div>
 
-            <div class="input">
-                <input placeholder="Email" type="email" class="{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-                <span><i class="fa fa-envelope"></i></span>
+                <div class="panel panel-default divcenter noradius noborder" style="max-width: 400px;">
+                    <div class="panel-body" style="padding: 40px;">
+                        <form method="POST" id="login-form" name="login-form" class="nobottommargin" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
 
-                @if ($errors->has('email'))
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('email') }}</strong>
-                    </span>
-                @endif
+                            @csrf
+
+                            <h3>Login to your Account</h3>
+
+                            <div class="col_full">
+                                <label for="email">Email:</label>
+                                <input type="email" name="email" value="{{ old('email') }}" required class="form-control not-dark{{ $errors->has('email') ? ' is-invalid' : '' }}">
+
+                                @if ($errors->has('email'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
+                            <div class="col_full">
+                                <label for="password">Password:</label>
+                                <input type="password" id="password" name="password" class="form-control not-dark{{ $errors->has('password') ? ' is-invalid' : '' }}" required>
+
+                                @if ($errors->has('password'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
+                            <div class="col_full nobottommargin">
+                                <button class="button button-3d button-black nomargin" type="submit">Login</button>
+                                <a href="{{ route('password.request') }}" class="fright">Forgot Password?</a>
+                            </div>
+                        </form>
+
+                        <div class="line line-sm"></div>
+
+                        <div class="center">
+                            <h4 style="margin-bottom: 15px;">or</h4>
+                            <a href="{{ route('register') }}" class="button button-rounded si-facebook si-colored">Register</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-
-            <div class="input">
-                <input id="password" placeholder="Password" type="password" class="{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                <span><i class="fa fa-lock"></i></span>
-
-                @if ($errors->has('password'))
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('password') }}</strong>
-                    </span>
-                @endif
-            </div>
-            <a class="btn btn-link" href="{{ route('password.request') }}" style="font-size: 12px; float: right; color: #bdc3c7;">
-                {{ __('Forgot Your Password?') }}
-            </a>
-
-            <button type="submit" class="submit"><i class="fa fa-long-arrow-alt-right"></i></button>
-
-        </fieldset>
-
-        <div class="feedback">
-            login successful <br />
-            redirecting...
         </div>
-    </form>
 
 
-@endsection
-
-@section('scripts')
-<script>
-    $( ".input" ).focusin(function() {
-      $( this ).find( "span" ).animate({"opacity":"0"}, 200);
-    });
-
-    $( ".input" ).focusout(function() {
-      $( this ).find( "span" ).animate({"opacity":"1"}, 300);
-    });
-
-    $(".login").submit(function(){
-      $(this).find(".submit i").removeAttr('class').addClass("fa fa-check").css({"color":"#fff"});
-      $(".submit").css({"background":"#2ecc71", "border-color":"#2ecc71"});
-      $(".feedback").show().animate({"opacity":"1", "bottom":"-80px"}, 400);
-      $("input").css({"border-color":"#2ecc71"});
-      return true;
-    });
-</script>
 @endsection
