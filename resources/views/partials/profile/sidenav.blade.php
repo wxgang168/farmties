@@ -7,6 +7,8 @@
           </li>
           <li class=" nav-item"><a href="{{ route('orders.index') }}"><i class="icon-shuffle"></i><span class="menu-title" data-i18n="">Transactions</span></a>
           </li>
+          <li class=" nav-item"><a href="#" onclick="return false;"><i class="icon-wallet"></i><span class="menu-title" data-i18n="">Wallet</span></a>
+          </li>
           {{--  
           <li class=" nav-item"><a href="faq.html"><i class="icon-support"></i><span class="menu-title" data-i18n="">FAQ</span></a>
           </li>

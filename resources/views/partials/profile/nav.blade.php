@@ -18,7 +18,7 @@
 
 
 
-              <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label" href="{{ route('cart.index') }}"><i class="ficon icon-wallet"></i><span class="badge badge-pill badge-default badge-danger badge-default badge-up badge-glow">{{ Cart::content()->count() }}</span></a></li>
+              <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label" href="{{ route('cart.index') }}"><i class="ficon icon-basket"></i><span class="badge badge-pill badge-default badge-danger badge-default badge-up badge-glow">{{ Cart::content()->count() }}</span></a></li>
 
 
 
