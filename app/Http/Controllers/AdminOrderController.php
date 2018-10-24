@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Order;
 
+use App\Events\OrderEvents as PaymentConfirmed;
+
 class AdminOrderController extends Controller
 {
 	/**
@@ -47,6 +49,7 @@ class AdminOrderController extends Controller
         }
 
         flash()->success('All Done!!', 'Payment successfully verified.');
+        event(new PaymentConfirmed($order));
         return redirect()->route('admin.orders.index');
     }
 }

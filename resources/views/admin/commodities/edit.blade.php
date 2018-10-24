@@ -18,10 +18,17 @@
               </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-3">
               <div class="form-group">
                 <label for="price">Price/Metric Tone</label>
                 <input type="number" name="price" class="form-control" required min="1000" value="{{ $commodity->prices->last()->price }}">
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="path">New Image Upload (optional)</label>
+                <input type="file" name="path" id="path" class="form-control">
               </div>
             </div>
           </div>

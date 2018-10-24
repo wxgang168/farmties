@@ -5,6 +5,8 @@ namespace App\Listeners;
 use App\Events\OrderEvents;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Mail;
+use App\Mail\PaymentConfirmation;
 
 class MadePayment
 {
@@ -26,6 +28,6 @@ class MadePayment
      */
     public function handle(OrderEvents $event)
     {
-        //
+        Mail::to($event->order->owner->email)->queue(new PaymentConfirmation($event->order));
     }
 }

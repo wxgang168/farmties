@@ -24,6 +24,10 @@ class AppServiceProvider extends ServiceProvider
             $view->with('services', \App\Service::where('archived', 0)->oldest()->get());
         });
 
+        view()->composer('pages.about', function($view) {
+            $view->with('services', \App\Service::where('archived', 0)->oldest()->get());
+        });
+
         view()->composer('pages.index', function($view) {
             $view->with('sliders', \App\Slider::where('archived', 0)->latest()->get());
         });

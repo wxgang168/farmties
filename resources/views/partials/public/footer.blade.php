@@ -167,7 +167,7 @@
 	<div class="container clearfix">
 
 		<div class="col_half">
-			Copyrights &copy; {{ date('Y') }} All Rights Reserved by Farmties.<br>
+			Copyrights &copy; {{ date('Y') }} All Rights Reserved by Farmties, Powered by <a href="http://dahrahglobal.com" target="_blank">Dahrahglobal</a><br>
 			<div class="copyright-links"><a href="#" onclick="return false;">Terms of Use</a> / <a href="#" onclick="return false;">Privacy Policy</a></div>
 		</div>
 
@@ -196,7 +196,7 @@
 
 			<div class="clear"></div>
 
-			<i class="icon-envelope2"></i> info@farmties.com <span class="middot">&middot;</span> <i class="icon-headphones"></i> +234 803 (FARMTIES)
+			<i class="icon-envelope2"></i> info@farmties.com <span class="middot">&middot;</span> <i class="icon-headphones"></i> +(234) 803 276 8437, &nbsp; (234) 817 595 1788
 		</div>
 
 	</div>

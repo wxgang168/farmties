@@ -119,6 +119,15 @@ class CommodityController extends Controller
         $commodity->name = $request->name;
         $commodity->slug = slugify($request->name);
 
+        if ($request->hasFile('path')) {
+            $file = $request->file('path');
+            $filename = time() . $file->getClientOriginalName();
+            $location = public_path('images/commodities/' . $filename);
+            Image::make($file)->fit(1200, 1486)->save($location);
+
+            $commodity->path = $filename;
+        }
+
         if ($commodity->save()) {
             $priceTag = new CommodityPrice;
 

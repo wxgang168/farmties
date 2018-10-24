@@ -31,12 +31,14 @@
                     <p>Services</p>
                 </a>
             </li>
+            {{--  
             <li>
                 <a href="{{ route('sliders.index') }}">
                     <i class="pe-7s-settings"></i>
                     <p>Sliders</p>
                 </a>
             </li>
+            --}}
             <li>
                 <a href="{{ route('regions.index') }}">
                     <i class="pe-7s-paint-bucket"></i>
@@ -52,7 +54,7 @@
 
             <li>
                 <a href="{{ route('admin.users.index') }}">
-                    <i class="pe-7s-settings"></i>
+                    <i class="pe-7s-users"></i>
                     <p>Users</p>
                 </a>
             </li>

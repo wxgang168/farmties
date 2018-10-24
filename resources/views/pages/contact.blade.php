@@ -77,10 +77,9 @@
 			Plot 649 Franca Afegbua Crescent,<br>
 			Zone E Extension, Apo, Abuja, Abuja - FCT, Nigeria<br>
 		</address>
-		{{--  
-		<abbr title="Phone Number"><strong>Phone:</strong></abbr> (91) 8547 632521<br>
-		<abbr title="Fax"><strong>Fax:</strong></abbr> (91) 11 4752 1433<br>
-		--}}
+
+		<abbr title="Phone Number"><strong>Phone:</strong></abbr>  +(234) 803 276 8437<br>
+		<abbr title="Mobile"><strong>Mobile:</strong></abbr>  +(234) 817 595 1788<br>
 		<abbr title="Email Address"><strong>Email:</strong></abbr> info@farmties.com
 
 		<div class="widget noborder notoppadding">
