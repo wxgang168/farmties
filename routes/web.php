@@ -11,6 +11,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::prefix('admin')->group(function() {
 
 	Route::resource('commodities', 'CommodityController');
+	Route::get('users', 'AdminUserController@index')->name('admin.users.index');
 	Route::resource('services', 'ServiceController');
 	Route::resource('sliders', 'SliderController');
 	Route::resource('regions', 'RegionController');

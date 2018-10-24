@@ -49,6 +49,13 @@
                     <p>Abbreviations</p>
                 </a>
             </li>
+
+            <li>
+                <a href="{{ route('admin.users.index') }}">
+                    <i class="pe-7s-settings"></i>
+                    <p>Users</p>
+                </a>
+            </li>
         </ul>
 	</div>
 </div>
