@@ -10,7 +10,8 @@
 
 			<ul>
 				<li class="current"><a href="{{ route('welcome') }}"><div>Home</div></a></li>
-				<li><a href="#"><div>About Us</div></a></li>
+				<li><a href="{{ route('about') }}"><div>About Us</div></a></li>
+				<li><a href="{{ route('contact') }}"><div>Contact Us</div></a></li>
 			</ul>
 
 		</div>

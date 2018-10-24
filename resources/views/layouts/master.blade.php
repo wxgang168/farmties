@@ -21,6 +21,8 @@
 	<link rel="stylesheet" href="/css/responsive.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
+	@yield('styles')
+
 	<!-- Document Title
 	============================================= -->
 	<title>@yield('title', 'Farmties | Welcome')</title>
@@ -82,6 +84,9 @@
 	<!-- Footer Scripts
 	============================================= -->
 	<script type="text/javascript" src="/js/functions.js"></script>
+	<script src="/js/sweetalert.min.js"></script>
+
+	@include('flash')
 
 </body>
 </html>

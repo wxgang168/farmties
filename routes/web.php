@@ -28,6 +28,9 @@ Route::prefix('admin')->group(function() {
 
 Route::get('/verify/user/{url}', 'HomeController@verify');
 Route::get('/services/{service}', 'ServiceController@show')->name('services.show');
+Route::get('/about', 'PageController@about')->name('about');
+Route::get('/contact', 'PageController@contact')->name('contact');
+Route::post('/contact', 'PageController@sendmail')->name('mailsend');
 
 Route::prefix('dashboard')->group(function() {
 

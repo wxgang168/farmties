@@ -31,6 +31,6 @@ class NewOrderMail extends Mailable implements ShouldQueue
      */
     public function build()
     {
-        return $this->markdown('emails.orders.new-order');
+        return $this->markdown('emails.orders.new-order')->subject('You have made an Order');
     }
 }

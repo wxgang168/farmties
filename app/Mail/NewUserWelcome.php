@@ -31,6 +31,6 @@ class NewUserWelcome extends Mailable implements ShouldQueue
      */
     public function build()
     {
-        return $this->markdown('emails.user.welcome');
+        return $this->markdown('emails.user.welcome')->subject('Welcome to Farmties');
     }
 }
