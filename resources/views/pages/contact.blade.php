@@ -24,7 +24,7 @@
 
 		<h3>Send us an Email</h3>
 
-		<div class="ffroomm">
+		<div class="col_two_third">
 
 			<form class="nobottommargin" action="{{ route('mailsend') }}" method="POST">
 
@@ -70,7 +70,7 @@
 
 	<!-- Sidebar
 	============================================= -->
-	<div class="sidebar col_last nobottommargin">
+	<div class="sidebar col_one_third col_last nobottommargin">
 
 		<address>
 			<strong>Headquarters:</strong><br>
