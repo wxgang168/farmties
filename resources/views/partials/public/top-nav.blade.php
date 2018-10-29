@@ -26,7 +26,7 @@
 							@foreach($abbreviations as $abbreviation)
 								<li>
 									{{ 
-										$abbreviation->commodity->name . ' (' . $abbreviation->region->abb . ')' . ' -  MaxP - ' . nairafy($abbreviation->MaxP) . ',  MinP - ' . nairafy($abbreviation->MinP) . ',  AveP - ' . nairafy($abbreviation->AveP) . ',  CHG - ' . $abbreviation->CHG . '%' 
+										$abbreviation->commodity->name . ' (' . $abbreviation->region->abb . ')' . ' -  MaxP - ' . '&#8358;' . $abbreviation->MaxP . ',  MinP - ' . '&#8358;' . $abbreviation->MinP . ',  AveP - ' . '&#8358;' . $abbreviation->AveP . ',  CHG - ' . $abbreviation->CHG . '%' 
 									}}
 								</li>
 							@endforeach
