@@ -119,7 +119,7 @@
 									<td>NGN {{ Cart::tax() }}</td>
 								</tr>
 								<tr>
-									<td><strong>SUBTITLE</strong></td>
+									<td><strong>SUBTOTAL</strong></td>
 									<td>NGN {{ Cart::subtotal() }}</td>                        
 								</tr>
                      

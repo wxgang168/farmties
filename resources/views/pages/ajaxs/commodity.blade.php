@@ -19,7 +19,7 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td>Price/MT</td>
+						<td>Price</td>
 						<td><span id="price" data-value="{{ nairafy($commodity->prices->last()->price) }}">-</span></td>
 					</tr>
 					<tr>
@@ -31,7 +31,7 @@
 						<td><span id="storageP" data-value="500">-</span></td>
 					</tr>
 					<tr>
-						<td>Handling Fee/MT</td>
+						<td>Handling Fee</td>
 						<td><span id="handling">-</span></td>
 					</tr>
 					<tr>

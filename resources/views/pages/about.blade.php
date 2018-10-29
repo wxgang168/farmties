@@ -14,11 +14,10 @@
 
 </style>
 @stop
-
 @section('innerclass', 'nopadding')
 
 @section('content')
-<div id="about" class="section parallax full-screen nomargin noborder" style="background-image: url('/images/parallax/soya.jpg');" data-stellar-background-ratio="0.4">
+<div id="about" class="section parallax full-screen dark nomargin noborder" style="background-image: url('/images/parallax/soya.jpg');background-color: #333; background-blend-mode: multiply;" data-stellar-background-ratio="0.4">
 	<div class="vertical-middle">
 		<div class="container clearfix">
 
@@ -78,7 +77,7 @@
 	</div>
 </div>
 
-<div class="section parallax full-screen dark nomargin noborder" style="background-image: url('/images/parallax/maize_farm.jpg');" data-stellar-background-ratio="0.4">
+<div class="section parallax full-screen dark nomargin noborder" style="background-image: url('/images/parallax/maize_farm.jpg');background-color: #555; background-blend-mode: multiply;" data-stellar-background-ratio="0.4">
 	<div class="vertical-middle">
 		<div class="container clearfix">
 
@@ -102,10 +101,10 @@
 	<div class="heading-block center nobottomborder nobottommargin">
 		<h2>Our Values</h2><br>
 		<ul>
-			<li>Excellence</li>
-			<li>Inovation</li>
-			<li>Integrity</li>
-			<li>Customer Satisfaction</li>
+			<li>EXCELLENCE</li>
+			<li>INNOVATION</li>
+			<li>INTEGRITY</li>
+			<li>CUSTOMER SATISFACTION</li>
 		</ul>
 	</div>
 </div>
